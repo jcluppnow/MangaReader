@@ -6,4 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".MorePage.MoreActivity">
 
+    <FrameLayout
+        android:id="@+id/moreHeaderFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintHeight_percent="0.10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/configurationFrameLayout"
+        />
+
+    <FrameLayout
+        android:id="@+id/configurationFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintHeight_percent="0.78"
+        app:layout_constraintTop_toBottomOf="@id/moreHeaderFrameLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/moreNavigationBarFrameLayout"
+        />
+
+    <LinearLayout
+        android:id="@+id/moreNavigationBarFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintTop_toBottomOf="@id/configurationFrameLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <FrameLayout
+            android:id="@+id/libraryNavigationItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            />
+
+        <FrameLayout
+            android:id="@+id/historyNavigationItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            />
+
+        <FrameLayout
+            android:id="@+id/moreNavigationItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            />
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

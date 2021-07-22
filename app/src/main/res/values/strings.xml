@@ -3,7 +3,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="defaultLabel">Default</string>
     <string name="downloadedLabel">Downloaded</string>
+    <string name="libraryLabel">Library</string>
     <string name="historyLabel">History</string>
     <string name="moreLabel">More</string>
-    <string name="libraryLabel">Library</string>
+    <string name="backupAndRestoreLabel">Backup and Restore</string>
+    <string name="advancedSettingsLabel">Advanced Settings</string>
+    <string name="languageLabel">Language</string>
+    <string name="generalLabel">General</string>
+    <string name="versionLabel">Version</string>
+    <string name="versionNumberLabel">0.2</string>
+    <string name="aboutUsLabel">About Us</string>
+    <string name="termsAndPoliciesLabel">Terms and Policies</string>
+    <string name="configurationLabel">Configuration</string>
 </resources>

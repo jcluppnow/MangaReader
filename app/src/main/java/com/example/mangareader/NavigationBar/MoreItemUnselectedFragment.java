@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mangareader.MorePage.MoreActivity;
 import com.example.mangareader.R;
 
 public class MoreItemUnselectedFragment extends Fragment {
@@ -49,7 +50,7 @@ public class MoreItemUnselectedFragment extends Fragment {
     private void selectMoreEventHandler()
     {
         //Get Fragment Manager from Parent Activity.
-        FragmentManager fragmentManager = getParentFragmentManager();
+        /*FragmentManager fragmentManager = getParentFragmentManager();
 
         //Mark the Library Item as unselected.
         fragmentManager.beginTransaction().replace(R.id.libraryNavigationItem, new LibraryItemUnselectedFragment()).commit();
@@ -58,6 +59,8 @@ public class MoreItemUnselectedFragment extends Fragment {
         fragmentManager.beginTransaction().replace(R.id.historyNavigationItem, new HistoryItemUnselectedFragment()).commit();
 
         //Mark the More Item as selected.
-        fragmentManager.beginTransaction().replace(R.id.moreNavigationItem, new MoreItemSelectedFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.moreNavigationItem, new MoreItemSelectedFragment()).commit();*/
+
+        startActivity(MoreActivity.getIntent(getActivity()));
     }
 }
