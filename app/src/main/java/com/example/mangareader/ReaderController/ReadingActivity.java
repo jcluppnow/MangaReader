@@ -112,7 +112,7 @@ public class ReadingActivity extends AppCompatActivity {
                     };
 
             //Initialize Gesture Detector.
-            gestureDetector = new GestureDetector(listener);
+            gestureDetector = new GestureDetector(getApplicationContext(), listener);
 
             //Set listener on view.
             view.setOnTouchListener(this);
