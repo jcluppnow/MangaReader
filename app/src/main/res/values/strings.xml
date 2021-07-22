@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MangaReader</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="defaultLabel">Default</string>
+    <string name="downloadedLabel">Downloaded</string>
+    <string name="historyLabel">History</string>
+    <string name="moreLabel">More</string>
+    <string name="libraryLabel">Library</string>
 </resources>
