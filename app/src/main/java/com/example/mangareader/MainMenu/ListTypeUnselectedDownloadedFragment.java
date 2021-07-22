@@ -1,10 +1,13 @@
 package com.example.mangareader.MainMenu;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,23 +19,29 @@ public class ListTypeUnselectedDownloadedFragment extends Fragment {
 
     private TextView downloadedLabel;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        TransitionInflater inflater = TransitionInflater.from(requireContext());
+        setExitTransition(inflater.inflateTransition(R.transition.fade));
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_list_type_unselected_downloaded, container, false);
+        View view = inflater.inflate(R.layout.fragment_list_type_downloaded, container, false);
 
-        //Initialise UI Elements.
+        //Find UI Elements.
         downloadedLabel = view.findViewById(R.id.listTypeUnselectedDownloadedLabel);
 
-        downloadedLabel.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        selectDownloadedEventHandler();
-                    }
-                }
-        );
+        //As this item is unselected, hide the selected divider.
+        view.findViewById(R.id.selectedDivider).setVisibility(View.INVISIBLE);
+
+        //Add Event Listeners.
+        view.setOnClickListener(v -> selectDownloadedEventHandler());
 
         return view;
     }
