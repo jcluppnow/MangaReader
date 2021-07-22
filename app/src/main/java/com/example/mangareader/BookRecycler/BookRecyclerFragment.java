@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.mangareader.Models.Book;
 import com.example.mangareader.R;
+import com.example.mangareader.ReaderController.ReadingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +92,7 @@ public class BookRecyclerFragment extends Fragment {
         }
     }
 
-    private class BookDataViewHolder extends RecyclerView.ViewHolder
+    private class BookDataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         private TextView title;
 
@@ -101,11 +102,19 @@ public class BookRecyclerFragment extends Fragment {
 
             //Find UI elements.
             title = itemView.findViewById(R.id.bookTitleTextView);
+
+            itemView.setOnClickListener(this);
         }
 
         public void bind(Book book)
         {
             title.setText(book.getTitle());
+        }
+
+        @Override
+        public void onClick(View v) {
+            System.out.println("Reached On Click");
+            startActivity(ReadingActivity.getIntent(getActivity()));
         }
     }
 

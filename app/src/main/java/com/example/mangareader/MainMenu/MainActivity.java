@@ -1,4 +1,4 @@
-package com.example.mangareader;
+package com.example.mangareader.MainMenu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -9,6 +9,7 @@ import com.example.mangareader.BookRecycler.BookRecyclerFragment;
 import com.example.mangareader.NavigationBar.HistoryItemUnselectedFragment;
 import com.example.mangareader.NavigationBar.LibraryItemSelectedFragment;
 import com.example.mangareader.NavigationBar.MoreItemUnselectedFragment;
+import com.example.mangareader.R;
 
 public class MainActivity extends AppCompatActivity {
 

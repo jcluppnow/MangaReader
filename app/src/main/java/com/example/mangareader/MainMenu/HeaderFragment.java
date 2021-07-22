@@ -1,4 +1,4 @@
-package com.example.mangareader;
+package com.example.mangareader.MainMenu;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.mangareader.R;
 
 
 public class HeaderFragment extends Fragment {
