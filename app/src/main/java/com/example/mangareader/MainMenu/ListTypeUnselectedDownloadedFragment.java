@@ -35,8 +35,6 @@ public class ListTypeUnselectedDownloadedFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list_type_downloaded, container, false);
 
         //Find UI Elements.
-        downloadedLabel = view.findViewById(R.id.listTypeUnselectedDownloadedLabel);
-
         //As this item is unselected, hide the selected divider.
         view.findViewById(R.id.selectedDivider).setVisibility(View.INVISIBLE);
 
