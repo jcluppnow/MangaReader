@@ -3,6 +3,8 @@ package com.example.mangareader.ReaderController;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -34,7 +36,7 @@ public class ReadingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reading);
 
         //Set the default page.
-        currentPage = 0;
+        currentPage = 1;
         
         //Find UI elements.
         bookImage = findViewById(R.id.bookImage);
@@ -62,8 +64,25 @@ public class ReadingActivity extends AppCompatActivity {
         //Fetch the drawable identifer using the above string.
         int resourceID = getResources().getIdentifier(resourceName, "drawable", getPackageName());
 
-        //Update with next image.
-        bookImage.setImageResource(resourceID);
+        startFlipAnimation(resourceID);
+    }
+
+    private void startFlipAnimation(int nextImageID)
+    {
+        bookImage.setRotationY(0f);
+        bookImage.animate().rotationY(90f).setListener(new AnimatorListenerAdapter()
+        {
+            @Override
+            public void onAnimationEnd(Animator animation)
+            {
+                //Update with next image.
+                bookImage.setImageResource(nextImageID);
+
+                bookImage.setRotationY(270f);
+
+                bookImage.animate().rotationY(360f).setListener(null);
+            }
+        });
     }
 
     private void loadPreviousImage()
