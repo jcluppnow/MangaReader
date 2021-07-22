@@ -3,10 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
+    tools:context=".NavigationBar.HistoryItemSelectedFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NavigationBar.MoreItemUnselectedFragment"
     android:background="#0C345A"
     >
 
@@ -16,16 +15,16 @@
         android:layout_height="0dp"
         android:visibility="invisible"
 
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.02"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/moreSelectedItemIcon"
+        app:layout_constraintBottom_toTopOf="@id/historySelectedItemIcon"
         />
 
     <ImageView
-        android:id="@+id/moreSelectedItemIcon"
-        android:src="@drawable/ic_more"
+        android:id="@+id/historySelectedItemIcon"
+        android:src="@drawable/ic_history"
         android:layout_width="0dp"
         android:layout_height="0dp"
 
@@ -35,36 +34,50 @@
         app:layout_constraintTop_toBottomOf="@id/topSpacer"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/moreSelectedLabel"
+        app:layout_constraintBottom_toTopOf="@id/historySelectedLabel"
         />
 
     <TextView
-        android:id="@+id/moreSelectedLabel"
+        android:id="@+id/historySelectedLabel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
 
-        android:text="@string/moreLabel"
+        android:text="@string/historyLabel"
         android:textColor="#FFFFFF"
         android:autoSizeTextType="uniform"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeMaxTextSize="20sp"
         android:autoSizeStepGranularity="2sp"
 
-        app:layout_constraintTop_toBottomOf="@id/moreSelectedItemIcon"
+        app:layout_constraintTop_toBottomOf="@id/historySelectedItemIcon"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomSpacer"
+        app:layout_constraintBottom_toTopOf="@id/selectedDivider"
         />
 
     <View
-        android:id="@+id/bottomSpacer"
+        android:id="@+id/selectedDivider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintHeight_percent="0.023"
+        app:layout_constraintTop_toBottomOf="@id/historySelectedLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/spacer"
+        />
+
+    <View
+        android:id="@+id/spacer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:visibility="invisible"
 
-        app:layout_constraintHeight_percent="0.073"
-        app:layout_constraintTop_toBottomOf="@id/moreSelectedLabel"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toBottomOf="@id/selectedDivider"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
