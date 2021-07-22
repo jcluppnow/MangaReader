@@ -1,15 +1,23 @@
 package com.example.mangareader.MainMenu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 
 import com.example.mangareader.BookRecycler.BookRecyclerFragment;
 import com.example.mangareader.NavigationBar.HistoryItemUnselectedFragment;
 import com.example.mangareader.NavigationBar.LibraryItemSelectedFragment;
 import com.example.mangareader.NavigationBar.MoreItemUnselectedFragment;
 import com.example.mangareader.R;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,8 +33,7 @@ public class MainActivity extends AppCompatActivity {
         //Fetch fragment manager.
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        if (savedInstanceState == null)
-        {
+        if (savedInstanceState == null) {
             //Add Header Fragment.
             fragmentManager.beginTransaction().add(R.id.headerFragmentFrameLayout, new HeaderFragment()).commit();
 

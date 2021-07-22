@@ -5,15 +5,20 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.mangareader.R;
+
+import java.io.File;
 
 public class ReadingActivity extends AppCompatActivity {
 
@@ -21,15 +26,22 @@ public class ReadingActivity extends AppCompatActivity {
     private TextView test;
     private SwipeListener swipeListener;
     private ConstraintLayout constraintLayout;
-
+    private int currentPage;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading);
 
+        //Set the default page.
+        currentPage = 0;
+        
         //Find UI elements.
         bookImage = findViewById(R.id.bookImage);
         constraintLayout = findViewById(R.id.readingConstraintLayout);
+
+        //Works based on the assumption images are stored in drawables.
+        bookImage.setImageResource(R.drawable.o1);
 
         //Initialize swipe listener.
         swipeListener = new SwipeListener(constraintLayout);
@@ -39,6 +51,35 @@ public class ReadingActivity extends AppCompatActivity {
         Intent readingActivityIntent = new Intent(context, ReadingActivity.class);
 
         return readingActivityIntent;
+    }
+
+    private void loadNextImage()
+    {
+        //Works based on the assumption images are stored in drawables.
+        currentPage++;
+        String resourceName = "o" + Integer.valueOf(currentPage);
+
+        //Fetch the drawable identifer using the above string.
+        int resourceID = getResources().getIdentifier(resourceName, "drawable", getPackageName());
+
+        //Update with next image.
+        bookImage.setImageResource(resourceID);
+    }
+
+    private void loadPreviousImage()
+    {
+        if (currentPage > 1)
+        {
+            //Works based on the assumption images are stored in drawables.
+            currentPage--;
+            String resourceName = "o" + Integer.valueOf(currentPage);
+
+            //Fetch the drawable identifer using the above string.
+            int resourceID = getResources().getIdentifier(resourceName, "drawable", getPackageName());
+
+            //Update with previous image.
+            bookImage.setImageResource(resourceID);
+        }
     }
 
     private class SwipeListener implements View.OnTouchListener {
@@ -76,11 +117,13 @@ public class ReadingActivity extends AppCompatActivity {
                                         if (xDiff > 0) {
                                             //Means we have swiped right.
                                             //Go to next image here.
+                                            loadPreviousImage();
                                         }
                                         else
                                         {
                                             //Means we have swiped left.
-                                            //Go to previous image here.
+                                            //Go to next image here.
+                                            loadNextImage();
                                         }
                                     }
                                 }
