@@ -6,13 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <FrameLayout
+        android:id="@+id/headerFragmentFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintHeight_percent="0.10"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/listTypeFragmentFrameLayout"
+        />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/listTypeFragmentFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintTop_toBottomOf="@id/headerFragmentFrameLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/booksRecyclerFragmentFrameLayout"
+        >
+
+        <FrameLayout
+            android:id="@+id/defaultListTypeFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/downloadedListTypeFragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <FrameLayout
+            android:id="@+id/downloadedListTypeFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/defaultListTypeFragment"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/booksRecyclerFragmentFrameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#BABDFF"
+
+        app:layout_constraintTop_toBottomOf="@id/listTypeFragmentFrameLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/navigationBarFragmentFrameLayout"
+        />
+
+    <LinearLayout
+        android:id="@+id/navigationBarFragmentFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintTop_toBottomOf="@id/booksRecyclerFragmentFrameLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <FrameLayout
+            android:id="@+id/libraryNavigationItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            />
+
+        <FrameLayout
+            android:id="@+id/historyNavigationItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            />
+
+        <FrameLayout
+            android:id="@+id/moreNavigationItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
