@@ -21,6 +21,7 @@ public class HistoryItemUnselectedFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history_item_unselected, container, false);
 
+        //Add Event Listeners.
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
