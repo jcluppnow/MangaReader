@@ -22,12 +22,7 @@ public class ListTypeUnselectedDefaultFragment extends Fragment {
 
         defaultLabel = view.findViewById(R.id.listTypeUnselectedDefaultLabel);
 
-        defaultLabel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectDefaultEventHandler();
-            }
-        });
+        defaultLabel.setOnClickListener(v -> selectDefaultEventHandler());
 
         return view;
     }
@@ -41,6 +36,6 @@ public class ListTypeUnselectedDefaultFragment extends Fragment {
         fragmentManager.beginTransaction().replace(R.id.defaultListTypeFragment, new ListTypeSelectedDefaultFragment()).commit();
 
         //Mark the Downloaded option as unselected.
-        fragmentManager.beginTransaction().replace(R.id.downloadedListTypeFragment, new ListTypeSelectedDownloadedFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.downloadedListTypeFragment, new ListTypeUnselectedDownloadedFragment()).commit();
     }
 }

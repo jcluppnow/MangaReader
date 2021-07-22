@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NavigationBar.LibraryItemUnselectedFragment"
+    tools:context=".NavigationBar.MoreItemUnselectedFragment"
     android:background="#0C345A"
     >
 
@@ -15,16 +16,16 @@
         android:layout_height="0dp"
         android:visibility="invisible"
 
-        app:layout_constraintHeight_percent="0.02"
+        app:layout_constraintHeight_percent="0.1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/librarySelectedItemIcon"
+        app:layout_constraintBottom_toTopOf="@id/moreSelectedItemIcon"
         />
 
     <ImageView
-        android:id="@+id/librarySelectedItemIcon"
-        android:src="@drawable/ic_library"
+        android:id="@+id/moreSelectedItemIcon"
+        android:src="@drawable/ic_more"
         android:layout_width="0dp"
         android:layout_height="0dp"
 
@@ -34,23 +35,23 @@
         app:layout_constraintTop_toBottomOf="@id/topSpacer"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/librarySelectedLabel"
+        app:layout_constraintBottom_toTopOf="@id/moreSelectedLabel"
         />
 
     <TextView
-        android:id="@+id/librarySelectedLabel"
+        android:id="@+id/moreSelectedLabel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
 
-        android:text="@string/libraryLabel"
+        android:text="@string/moreLabel"
         android:textColor="#FFFFFF"
         android:autoSizeTextType="uniform"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeMaxTextSize="20sp"
         android:autoSizeStepGranularity="2sp"
 
-        app:layout_constraintTop_toBottomOf="@id/librarySelectedItemIcon"
+        app:layout_constraintTop_toBottomOf="@id/moreSelectedItemIcon"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottomSpacer"
@@ -63,7 +64,7 @@
         android:visibility="invisible"
 
         app:layout_constraintHeight_percent="0.073"
-        app:layout_constraintTop_toBottomOf="@id/librarySelectedLabel"
+        app:layout_constraintTop_toBottomOf="@id/moreSelectedLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 
+import com.example.mangareader.BookRecycler.BookRecyclerFragment;
 import com.example.mangareader.NavigationBar.HistoryItemUnselectedFragment;
 import com.example.mangareader.NavigationBar.LibraryItemSelectedFragment;
 import com.example.mangareader.NavigationBar.MoreItemUnselectedFragment;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null)
         {
             //Add Header Fragment.
-            fragmentManager.beginTransaction().add(R.id.defaultListTypeFragment, new HeaderFragment());
+            fragmentManager.beginTransaction().add(R.id.headerFragmentFrameLayout, new HeaderFragment()).commit();
 
             //Add Top List Types.
             //Add Default List Type Fragment.
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             fragmentManager.beginTransaction().add(R.id.downloadedListTypeFragment, downloadedListTypeFragment, "DownloadedListTypeUnselected").commit();
 
             //Add Recycler Fragment.
+            fragmentManager.beginTransaction().add(R.id.booksRecyclerFragmentFrameLayout, new BookRecyclerFragment(), "BookRecyclerFragment").commit();
 
             //Add Bottom Navigation Item Fragments.
             //Add Library Navigation Item Fragment.
