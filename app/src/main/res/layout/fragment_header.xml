@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainMenu.HeaderFragment"
     android:background="#0C345A"
+    android:clickable="true"
+    android:focusable="true"
     >
 
     <View

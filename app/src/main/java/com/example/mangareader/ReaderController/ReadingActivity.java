@@ -2,6 +2,8 @@ package com.example.mangareader.ReaderController;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -28,7 +30,9 @@ public class ReadingActivity extends AppCompatActivity {
     private SwipeListener swipeListener;
     private ConstraintLayout constraintLayout;
     private int currentPage;
-    
+    private boolean popupEnabled;
+    private NavigationPopupFragment popupFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +40,10 @@ public class ReadingActivity extends AppCompatActivity {
 
         //Set the default page.
         currentPage = 1;
-        
+
+        //Set the default status for popup which is disabled. Popup will be hidden initially.
+        popupEnabled = false;
+
         //Find UI elements.
         bookImage = findViewById(R.id.bookImage);
         constraintLayout = findViewById(R.id.readingConstraintLayout);
@@ -44,14 +51,46 @@ public class ReadingActivity extends AppCompatActivity {
         //Works based on the assumption images are stored in drawables.
         bookImage.setImageResource(R.drawable.o1);
 
+        bookImage.setOnClickListener(v -> selectImageEventHandler());
+
         //Initialize swipe listener.
         swipeListener = new SwipeListener(constraintLayout);
+
+        //Create Popup Fragment.
+        popupFragment = new NavigationPopupFragment();
+
+        //Add Popup Fragment then hide the fragment.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().add(R.id.popupFrameLayout, popupFragment).hide(popupFragment).commit();
     }
 
     public static Intent getIntent(Context context) {
         Intent readingActivityIntent = new Intent(context, ReadingActivity.class);
 
         return readingActivityIntent;
+    }
+
+    private void selectImageEventHandler()
+    {
+        //Get the fragment manager.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        if (popupEnabled)
+        {
+            //Disable the popup by hiding it.
+            fragmentManager.beginTransaction().hide(popupFragment).commit();
+
+            //Mark the popup as hidden.
+            popupEnabled = false;
+        }
+        else
+        {
+            //Enable the popup by showing it.
+            fragmentManager.beginTransaction().show(popupFragment).commit();
+
+            //Mark the popup as shown.
+            popupEnabled = true;
+        }
     }
 
     private void loadNextImage()
