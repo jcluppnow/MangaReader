@@ -308,6 +308,7 @@
             android:layout_height="0dp"
             android:textColor="#FFFFFF"
             android:gravity="start"
+
             android:autoSizeTextType="uniform"
             android:autoSizeMinTextSize="15sp"
             android:autoSizeMaxTextSize="21sp"

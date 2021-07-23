@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.mangareader.MorePage.NotificationsPage.NotificationsActivity;
 import com.example.mangareader.R;
 
 public class MoreHeaderFragment extends Fragment {
@@ -37,6 +38,6 @@ public class MoreHeaderFragment extends Fragment {
 
     private void selectNotificationsEventHandler()
     {
-
+        startActivity(NotificationsActivity.getIntent(getActivity()));
     }
 }

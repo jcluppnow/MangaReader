@@ -15,4 +15,6 @@
     <string name="aboutUsLabel">About Us</string>
     <string name="termsAndPoliciesLabel">Terms and Policies</string>
     <string name="configurationLabel">Configuration</string>
+    <string name="notificationsLabel">Notifications</string>
+    <string name="emptyNotificationsLabel">You have no new notifications.</string>
 </resources>

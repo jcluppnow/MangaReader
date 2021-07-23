@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MangaReader">
-        <activity android:name=".MorePage.MoreActivity"></activity>
+        <activity android:name=".MorePage.NotificationsPage.NotificationsActivity"></activity>
+        <activity android:name=".MorePage.MoreActivity" />
         <activity android:name=".ReaderController.ReadingActivity" />
         <activity android:name=".MainMenu.MainActivity">
             <intent-filter>
