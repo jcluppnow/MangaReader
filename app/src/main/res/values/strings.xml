@@ -19,5 +19,6 @@
     <string name="emptyNotificationsLabel">You have no new notifications.</string>
     <string name="title_activity_history">HistoryActivity</string>
     <string name="emptyHistoryLabel">You have no recent history.</string>
-    <string name="searchLabel">Search for Manga</string>
+    <string name="searchLabel">Search for manga</string>
+    <string name="emptyRecyclerLabel">No manga found, add to shared library to start reading.</string>
 </resources>

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.mangareader.BookRecycler.EmptyRecyclerFragment;
 import com.example.mangareader.R;
 
 public class ListTypeUnselectedDownloadedFragment extends Fragment {
@@ -54,5 +55,8 @@ public class ListTypeUnselectedDownloadedFragment extends Fragment {
 
         //Mark the Default option as unselected.
         fragmentManager.beginTransaction().replace(R.id.defaultListTypeFragment, new ListTypeUnselectedDefaultFragment()).commit();
+
+        //Add the downloaded recycler. TBD.
+        fragmentManager.beginTransaction().replace(R.id.booksRecyclerFragmentFrameLayout, new EmptyRecyclerFragment()).commit();
     }
 }
