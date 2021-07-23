@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mangareader.HistoryPage.HistoryActivity;
 import com.example.mangareader.MainMenu.ListTypeSelectedDefaultFragment;
 import com.example.mangareader.MainMenu.ListTypeUnselectedDownloadedFragment;
 import com.example.mangareader.MainMenu.MainActivity;
@@ -78,6 +79,22 @@ public class HistoryItemUnselectedFragment extends Fragment {
                 historyImageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_history));
                 historyTextView.setTextColor(getResources().getColor(R.color.white));
                 selectedDivider.setBackgroundColor(getResources().getColor(R.color.white));
+
+                //Start Activity.
+                //Check if we can use transition animation.
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                {
+                    //Apply activity transition.
+                    startActivity(HistoryActivity.getIntent(getActivity()));
+
+                    //Do a transition. Enter/Exit animation required as follows.
+                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
+                else
+                {
+                    //Swap without transition.
+                    startActivity(HistoryActivity.getIntent(getActivity()));
+                }
             }
 
             return false;

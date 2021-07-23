@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MorePage.MoreHeaderFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HistoryPage.HistoryHeaderFragment"
     android:background="#0C345A"
     >
 
@@ -27,23 +26,23 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textColor="#FFFFFF"
-        android:text="@string/moreLabel"
+        android:text="@string/historyLabel"
         android:gravity="center_vertical"
         android:autoSizeTextType="uniform"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeMaxTextSize="30sp"
         android:autoSizeStepGranularity="2sp"
 
-        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintWidth_percent="0.55"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/spacer"
-        app:layout_constraintRight_toLeftOf="@id/notificationsButton"
+        app:layout_constraintRight_toLeftOf="@id/searchButton"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <ImageView
-        android:id="@+id/notificationsButton"
-        android:src="@drawable/ic_notifications"
+        android:id="@+id/searchButton"
+        android:src="@drawable/ic_search"
         android:layout_width="0dp"
         android:layout_height="0dp"
 
@@ -52,7 +51,23 @@
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/headerLabel"
+        app:layout_constraintRight_toLeftOf="@id/filterButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/filterButton"
+        android:src="@drawable/ic_filter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintHeight_percent="0.45"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/searchButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

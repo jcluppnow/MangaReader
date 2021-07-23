@@ -35,7 +35,7 @@ public class MoreActivity extends AppCompatActivity {
             //Add Configuration Information Fragment.
             fragmentManager.beginTransaction().add(R.id.configurationFrameLayout, new SettingsFragment(), "HistoryNavigationItemSelected").commit();
 
-            //Add more navigation bar items.
+            //Add navigation bar.
             //Add More Navigation Bar Item.
             fragmentManager.beginTransaction().add(R.id.moreNavigationItem, new MoreItemSelectedFragment(), "MoreNavigationItemSelected").commit();
 

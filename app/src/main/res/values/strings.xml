@@ -17,4 +17,7 @@
     <string name="configurationLabel">Configuration</string>
     <string name="notificationsLabel">Notifications</string>
     <string name="emptyNotificationsLabel">You have no new notifications.</string>
+    <string name="title_activity_history">HistoryActivity</string>
+    <string name="emptyHistoryLabel">You have no recent history.</string>
+    <string name="searchLabel">Search for Manga</string>
 </resources>
