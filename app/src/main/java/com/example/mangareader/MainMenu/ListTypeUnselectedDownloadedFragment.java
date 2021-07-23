@@ -18,8 +18,6 @@ import com.example.mangareader.R;
 
 public class ListTypeUnselectedDownloadedFragment extends Fragment {
 
-    private TextView downloadedLabel;
-
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onCreate(Bundle savedInstanceState)

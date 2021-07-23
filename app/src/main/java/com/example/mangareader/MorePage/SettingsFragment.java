@@ -12,8 +12,6 @@ import com.example.mangareader.R;
 
 public class SettingsFragment extends Fragment {
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

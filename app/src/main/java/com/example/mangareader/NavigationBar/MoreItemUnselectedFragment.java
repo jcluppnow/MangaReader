@@ -99,18 +99,6 @@ public class MoreItemUnselectedFragment extends Fragment {
 
     private void selectMoreEventHandler()
     {
-        //Get Fragment Manager from Parent Activity.
-        /*FragmentManager fragmentManager = getParentFragmentManager();
-
-        //Mark the Library Item as unselected.
-        fragmentManager.beginTransaction().replace(R.id.libraryNavigationItem, new LibraryItemUnselectedFragment()).commit();
-
-        //Mark the History Item as unselected.
-        fragmentManager.beginTransaction().replace(R.id.historyNavigationItem, new HistoryItemUnselectedFragment()).commit();
-
-        //Mark the More Item as selected.
-        fragmentManager.beginTransaction().replace(R.id.moreNavigationItem, new MoreItemSelectedFragment()).commit();*/
-
         startActivity(MoreActivity.getIntent(getActivity()));
     }
 }

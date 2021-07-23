@@ -113,7 +113,6 @@ public class BookRecyclerFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            System.out.println("Reached On Click");
             startActivity(ReadingActivity.getIntent(getActivity()));
         }
     }

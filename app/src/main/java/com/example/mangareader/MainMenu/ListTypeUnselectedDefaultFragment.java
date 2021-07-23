@@ -18,8 +18,6 @@ import com.example.mangareader.R;
 
 public class ListTypeUnselectedDefaultFragment extends Fragment {
 
-    private TextView defaultLabel;
-
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onCreate(Bundle savedInstanceState)

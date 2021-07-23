@@ -59,6 +59,6 @@ public class HeaderFragment extends Fragment {
     }
 
     private void filterEventHandler() {
-
+        //TBD
     }
 }

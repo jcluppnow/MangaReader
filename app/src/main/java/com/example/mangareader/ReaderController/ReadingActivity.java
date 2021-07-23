@@ -25,7 +25,6 @@ import java.io.File;
 public class ReadingActivity extends AppCompatActivity {
 
     private ImageView bookImage;
-    private TextView test;
     private SwipeListener swipeListener;
     private ConstraintLayout constraintLayout;
     private int currentPage;
