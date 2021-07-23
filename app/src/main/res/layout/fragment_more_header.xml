@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MorePage.MoreHeaderFragment">
+    tools:context=".MorePage.MoreHeaderFragment"
+    android:background="#0C345A"
+    >
 
     <View
         android:id="@+id/spacer"

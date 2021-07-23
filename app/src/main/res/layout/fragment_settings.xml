@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MorePage.SettingsFragment">
 
     <TextView
@@ -14,12 +13,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textColor="#FFFFFF"
-        android:gravity="left"
+        android:gravity="center_vertical"
         android:autoSizeTextType="uniform"
         android:autoSizeMinTextSize="15sp"
-        android:autoSizeMaxTextSize="25sp"
+        android:autoSizeMaxTextSize="23sp"
         android:autoSizeStepGranularity="2sp"
+        android:layout_marginLeft="10dp"
 
+        app:layout_constraintHeight_percent="0.1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -31,19 +32,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:weightSum="3"
+        android:weightSum="8"
 
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintTop_toBottomOf="@id/configurationTextView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/generalTextView"
+        app:layout_constraintBottom_toTopOf="@id/applicationInformationLayout"
         >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 >
 
                 <View
@@ -52,7 +53,7 @@
                     android:layout_height="match_parent"
                     android:visibility="invisible"
 
-                    app:layout_constraintWidth_percent="0.02"
+                    app:layout_constraintWidth_percent="0.01"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toLeftOf="@id/backupImageView"
@@ -64,7 +65,9 @@
                     android:src="@drawable/ic_upload"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:gravity="start"
 
+                    app:layout_constraintWidth_percent="0.2"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/backupSpacer"
                     app:layout_constraintRight_toLeftOf="@id/backupTextView"
@@ -75,8 +78,14 @@
                     android:id="@+id/backupTextView"
                     android:text="@string/backupAndRestoreLabel"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="0dp"
+                    android:textColor="#FFFFFF"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="15sp"
+                    android:autoSizeMaxTextSize="20sp"
+                    android:autoSizeStepGranularity="2sp"
 
+                    android:gravity="center_vertical"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/backupImageView"
                     app:layout_constraintRight_toRightOf="parent"
@@ -84,10 +93,17 @@
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            android:layout_weight="1"
+            />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             >
 
             <View
@@ -96,7 +112,7 @@
                 android:layout_height="match_parent"
                 android:visibility="invisible"
 
-                app:layout_constraintWidth_percent="0.02"
+                app:layout_constraintWidth_percent="0.01"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/settingsImageView"
@@ -109,6 +125,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
 
+                app:layout_constraintWidth_percent="0.2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/settingsSpacer"
                 app:layout_constraintRight_toLeftOf="@id/settingsTextView"
@@ -119,8 +136,14 @@
                 android:id="@+id/settingsTextView"
                 android:text="@string/advancedSettingsLabel"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:textColor="#FFFFFF"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp"
 
+                android:gravity="center_vertical"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/settingsImageView"
                 app:layout_constraintRight_toRightOf="parent"
@@ -128,10 +151,19 @@
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            android:layout_weight="1"
+
+            app:layout_constraintWidth_percent="0.01"
+            />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             >
 
             <View
@@ -140,7 +172,7 @@
                 android:layout_height="match_parent"
                 android:visibility="invisible"
 
-                app:layout_constraintWidth_percent="0.02"
+                app:layout_constraintWidth_percent="0.01"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/languageImageView"
@@ -153,6 +185,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
 
+                app:layout_constraintWidth_percent="0.2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/spacer"
                 app:layout_constraintRight_toLeftOf="@id/languageTextView"
@@ -163,7 +196,13 @@
                 android:id="@+id/languageTextView"
                 android:text="@string/languageLabel"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:textColor="#FFFFFF"
+                android:gravity="center_vertical"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="15sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp"
 
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/languageImageView"
@@ -174,94 +213,125 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/generalTextView"
-        android:text="@string/generalLabel"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/applicationInformationLayout"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:gravity="left"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMinTextSize="15sp"
-        android:autoSizeMaxTextSize="25sp"
-        android:autoSizeStepGranularity="2sp"
+        android:layout_marginTop="15dp"
 
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintTop_toBottomOf="@id/configurationOptionsLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/versionTextView"
-        />
+        app:layout_constraintBottom_toTopOf="@id/bottomSpacer"
+        >
+        <TextView
+            android:id="@+id/generalTextView"
+            android:text="@string/generalLabel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="#FFFFFF"
+            android:gravity="start"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeMaxTextSize="21sp"
+            android:autoSizeStepGranularity="2sp"
+            android:layout_marginLeft="10dp"
 
-    <TextView
-        android:id="@+id/versionTextView"
-        android:text="@string/versionLabel"
-        android:layout_width="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/versionTextView"
+            />
+
+        <TextView
+            android:id="@+id/versionTextView"
+            android:text="@string/versionLabel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="#FFFFFF"
+            android:gravity="start"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeMaxTextSize="21sp"
+            android:autoSizeStepGranularity="2sp"
+            android:layout_marginLeft="10dp"
+
+            app:layout_constraintTop_toBottomOf="@id/generalTextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/versionNumberTextView"
+            />
+
+        <TextView
+            android:id="@+id/versionNumberTextView"
+            android:text="@string/versionNumberLabel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="#828282"
+            android:gravity="start"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeMaxTextSize="15sp"
+            android:autoSizeStepGranularity="2sp"
+            android:layout_marginLeft="13dp"
+
+            app:layout_constraintTop_toBottomOf="@id/versionTextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/aboutUsTextView"
+            />
+
+        <TextView
+            android:id="@+id/aboutUsTextView"
+            android:text="@string/aboutUsLabel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="#FFFFFF"
+            android:gravity="start"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeMaxTextSize="21sp"
+            android:autoSizeStepGranularity="2sp"
+            android:layout_marginLeft="10dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/versionNumberTextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/termsAndPoliciesTextView"
+            />
+
+        <TextView
+            android:id="@+id/termsAndPoliciesTextView"
+            android:text="@string/termsAndPoliciesLabel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="#FFFFFF"
+            android:gravity="start"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeMaxTextSize="21sp"
+            android:autoSizeStepGranularity="2sp"
+            android:layout_marginLeft="10dp"
+
+            app:layout_constraintTop_toBottomOf="@id/aboutUsTextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/bottomSpacer"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:gravity="left"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMinTextSize="15sp"
-        android:autoSizeMaxTextSize="25sp"
-        android:autoSizeStepGranularity="2sp"
+        android:visibility="invisible"
+        android:layout_weight="1"
 
-        app:layout_constraintTop_toBottomOf="@id/generalTextView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/versionNumberTextView"
-        />
-
-    <TextView
-        android:id="@+id/versionNumberTextView"
-        android:text="@string/versionNumberLabel"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:gravity="left"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMinTextSize="15sp"
-        android:autoSizeMaxTextSize="25sp"
-        android:autoSizeStepGranularity="2sp"
-
-        app:layout_constraintTop_toBottomOf="@id/versionTextView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/aboutUsTextView"
-        />
-
-    <TextView
-        android:id="@+id/aboutUsTextView"
-        android:text="@string/aboutUsLabel"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:gravity="left"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMinTextSize="15sp"
-        android:autoSizeMaxTextSize="25sp"
-        android:autoSizeStepGranularity="2sp"
-
-        app:layout_constraintTop_toBottomOf="@+id/versionNumberTextView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/termsAndPoliciesTextView"
-        />
-
-    <TextView
-        android:id="@+id/termsAndPoliciesTextView"
-        android:text="@string/termsAndPoliciesLabel"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textColor="#FFFFFF"
-        android:gravity="left"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMinTextSize="15sp"
-        android:autoSizeMaxTextSize="25sp"
-        android:autoSizeStepGranularity="2sp"
-
-        app:layout_constraintTop_toBottomOf="@id/aboutUsTextView"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintTop_toBottomOf="@id/applicationInformationLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

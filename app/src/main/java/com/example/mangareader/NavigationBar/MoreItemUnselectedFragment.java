@@ -36,13 +36,7 @@ public class MoreItemUnselectedFragment extends Fragment {
         view.findViewById(R.id.selectedDivider).setVisibility(View.INVISIBLE);
 
         //Add Event Listeners.
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("REACHED EVENT HANDLER");
-                selectMoreEventHandler();
-            }
-        });
+        view.setOnClickListener(v -> selectMoreEventHandler());
 
         return view;
     }

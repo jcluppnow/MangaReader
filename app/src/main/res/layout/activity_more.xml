@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MorePage.MoreActivity">
+    tools:context=".MorePage.MoreActivity"
+    android:background="#071F36"
+    >
 
     <FrameLayout
         android:id="@+id/moreHeaderFrameLayout"
@@ -49,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             />
 
         <FrameLayout
@@ -65,7 +67,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             />
 
     </LinearLayout>
