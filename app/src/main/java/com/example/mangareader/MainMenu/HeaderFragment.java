@@ -3,6 +3,7 @@ package com.example.mangareader.MainMenu;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mangareader.NavigationBar.HistoryItemSelectedFragment;
+import com.example.mangareader.NavigationBar.LibraryItemUnselectedFragment;
+import com.example.mangareader.NavigationBar.MoreItemUnselectedFragment;
 import com.example.mangareader.R;
+import com.example.mangareader.SearchFunctionality.SearchFragment;
 
 
 public class HeaderFragment extends Fragment {
@@ -30,9 +35,7 @@ public class HeaderFragment extends Fragment {
         filterButton = view.findViewById(R.id.filterButton);
 
         //Add Event Listeners.
-        searchButton.setOnClickListener(v -> searchEventHandler());
-
-        filterButton.setOnClickListener(v -> filterEventHandler());
+        setupListeners();
 
         //Set any initial values.
         labelTextView.setText(getString(R.string.libraryLabel));
@@ -40,8 +43,19 @@ public class HeaderFragment extends Fragment {
         return view;
     }
 
-    private void searchEventHandler() {
+    private void setupListeners()
+    {
+        searchButton.setOnClickListener(v -> searchEventHandler());
 
+        filterButton.setOnClickListener(v -> filterEventHandler());
+    }
+
+    private void searchEventHandler() {
+        //Get Fragment Manager from Parent Activity.
+        FragmentManager fragmentManager = getParentFragmentManager();
+
+        //Switch Header Fragment will Search Fragment.
+        fragmentManager.beginTransaction().replace(R.id.headerFragmentFrameLayout, new SearchFragment()).commit();
     }
 
     private void filterEventHandler() {
