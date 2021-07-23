@@ -77,7 +77,20 @@ public class MoreItemUnselectedFragment extends Fragment {
                 selectedDivider.setBackgroundColor(getResources().getColor(R.color.white));
 
                 //Start Activity.
-                startActivity(MoreActivity.getIntent(getActivity()));
+                //Check if we can use transition animation.
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                {
+                    //Apply activity transition.
+                    startActivity(MoreActivity.getIntent(getActivity()));
+
+                    //Do a transition. Enter/Exit animation required as follows.
+                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
+                else
+                {
+                   //Swap without transition.
+                    startActivity(MoreActivity.getIntent(getActivity()));
+                }
             }
 
             return false;

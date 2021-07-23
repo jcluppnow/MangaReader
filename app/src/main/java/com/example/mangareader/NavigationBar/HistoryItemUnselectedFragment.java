@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.mangareader.MainMenu.ListTypeSelectedDefaultFragment;
 import com.example.mangareader.MainMenu.ListTypeUnselectedDownloadedFragment;
+import com.example.mangareader.MainMenu.MainActivity;
 import com.example.mangareader.MorePage.MoreActivity;
 import com.example.mangareader.R;
 
