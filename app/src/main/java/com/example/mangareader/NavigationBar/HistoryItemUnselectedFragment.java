@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mangareader.DataControllers.NavigationSingleton;
 import com.example.mangareader.HistoryPage.HistoryActivity;
 import com.example.mangareader.MainMenu.ListTypeSelectedDefaultFragment;
 import com.example.mangareader.MainMenu.ListTypeUnselectedDownloadedFragment;
@@ -88,7 +89,7 @@ public class HistoryItemUnselectedFragment extends Fragment {
                     startActivity(HistoryActivity.getIntent(getActivity()));
 
                     //Do a transition. Enter/Exit animation required as follows.
-                    getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                    applyTransition();
                 }
                 else
                 {
@@ -114,5 +115,33 @@ public class HistoryItemUnselectedFragment extends Fragment {
 
         //Mark the More Item as unselected.
         fragmentManager.beginTransaction().replace(R.id.moreNavigationItem, new MoreItemUnselectedFragment()).commit();
+    }
+
+    private void applyTransition()
+    {
+        NavigationSingleton navigationSingleton = NavigationSingleton.getInstance();
+
+        if (navigationSingleton.isCurrentItemLibrary())
+        {
+            //Update singleton to match that the item has changed to history.
+            navigationSingleton.changeToHistory();
+
+            //Library -> History = Rightwards direction.
+            //Animation for the entering activity is first, followed by the animation for the exiting activity.
+            //Exiting activity should animate leaving from the left.
+            //The entering activity should be animated entering from the right.
+            getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        }
+        else
+        {
+            //Update singleton to match that the item has changed to history.
+            navigationSingleton.changeToHistory();
+
+            //More -> History = Leftwards direction.
+            //Animation for the entering activity is first, followed by the animation for the exiting activity.
+            //Exiting activity should animate leaving from the right.
+            //The entering activity should be animated entering from the left.
+            getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        }
     }
 }

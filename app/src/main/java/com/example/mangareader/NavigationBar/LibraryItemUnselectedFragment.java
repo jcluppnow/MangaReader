@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.mangareader.DataControllers.NavigationSingleton;
 import com.example.mangareader.MainMenu.MainActivity;
 import com.example.mangareader.MorePage.MoreActivity;
 import com.example.mangareader.R;
@@ -84,6 +85,7 @@ public class LibraryItemUnselectedFragment extends Fragment {
                     startActivity(MainActivity.getIntent(getActivity()));
 
                     //Do a transition. Enter/Exit animation required as follows.
+                    applyTransition();
                     getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 }
                 else
@@ -111,4 +113,20 @@ public class LibraryItemUnselectedFragment extends Fragment {
         //Mark the More Item as unselected.
         fragmentManager.beginTransaction().replace(R.id.moreNavigationItem, new MoreItemUnselectedFragment()).commit();
     }
+
+    private void applyTransition()
+    {
+        //Only one animation needed as any movement towards library item is in a left direction.
+        NavigationSingleton navigationSingleton = NavigationSingleton.getInstance();
+
+        //Update singleton to match that the item has changed to library.
+        navigationSingleton.changeToLibrary();
+
+        //History/More -> Library = Leftwards direction.
+        //Animation for the entering activity is first, followed by the animation for the exiting activity.
+        //Exiting activity should animate leaving from the right.
+        //The entering activity should be animated entering from the left.
+        getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+
 }
