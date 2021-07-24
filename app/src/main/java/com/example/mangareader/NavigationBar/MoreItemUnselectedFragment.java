@@ -63,7 +63,7 @@ public class MoreItemUnselectedFragment extends Fragment {
         view.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_DOWN)
             {
-                view.setBackgroundColor(getResources().getColor(R.color.lighter_background_header));
+                view.setBackgroundColor(getResources().getColor(R.color.highlightBox));
                 moreImageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_more_selected_hover));
                 moreTextView.setTextColor(getResources().getColor(R.color.darkHover));
                 selectedDivider.setBackgroundColor(getResources().getColor(R.color.darkHover));

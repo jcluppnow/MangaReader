@@ -11,5 +11,6 @@
     <color name="background_blue">#071F36</color> <!-- Oxford Blue in Figma. -->
     <color name="header_blue">#0C345A</color> <!-- Prussian Blue in Figma. -->
     <color name="lighter_background_header">#81B9EE</color>
-    <color name="darkHover">#474747</color>
+    <color name="darkHover">#D6D6D6</color>
+    <color name="highlightBox">#020A12</color>
 </resources>
