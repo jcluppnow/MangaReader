@@ -38,22 +38,22 @@ public class BookRecyclerFragment extends Fragment {
         //Fetch Data.
         ArrayList<Book> bookList = fetchBookList();
 
-        bookList.add(new Book("aswsddassdasd"));
-        bookList.add(new Book("aswwsddwddwassdasd"));
-        bookList.add(new Book("asdwwsddassdasd"));
-        bookList.add(new Book("aswsddassdasd"));
-        bookList.add(new Book("aswsddassasdasddasd"));
-        bookList.add(new Book("aswwsddaassdasd"));
-        bookList.add(new Book("aswsddassdasd"));
-        bookList.add(new Book("asdwsdsadsdasddassdasd"));
-        bookList.add(new Book("aswsddassdasd"));
-        bookList.add(new Book("aswsdaasdddassdasd"));
-        bookList.add(new Book("aswsddassdasd"));
-        bookList.add(new Book("aswsasdsadddassdasd"));
-        bookList.add(new Book("aswsassdaddassdasd"));
-        bookList.add(new Book("a"));
+        bookList.add(new Book("One Piece Test Chapter"));
+        bookList.add(new Book("Test 2"));
+        bookList.add(new Book("Test 3"));
+        bookList.add(new Book("Test 4"));
+        bookList.add(new Book("Test 5"));
+        bookList.add(new Book("Test 6"));
+        bookList.add(new Book("Test 7"));
+        bookList.add(new Book("Test 8"));
+        bookList.add(new Book("Test 9"));
+        bookList.add(new Book("Test 10"));
+        bookList.add(new Book("Test 11"));
+        bookList.add(new Book("Test 12"));
+        bookList.add(new Book("Test 13"));
+        bookList.add(new Book("Test 14"));
 
-
+        //Create adapter.
         BookAdapter adapter = new BookAdapter(bookList);
 
         //Connect adapter to recycler view.
