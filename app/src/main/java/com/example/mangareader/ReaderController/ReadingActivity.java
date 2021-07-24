@@ -54,7 +54,8 @@ public class ReadingActivity extends AppCompatActivity {
         bookImage.setOnClickListener(v -> selectImageEventHandler());
 
         //Initialize swipe listener.
-        swipeListener = new SwipeListener(constraintLayout);
+        //swipeListener = new SwipeListener(constraintLayout);
+        swipeListener = new SwipeListener(bookImage);
 
         //Create Popup Fragment.
         popupFragment = new NavigationPopupFragment();
@@ -79,6 +80,7 @@ public class ReadingActivity extends AppCompatActivity {
         {
             //Disable the popup by hiding it.
             fragmentManager.beginTransaction().hide(popupFragment).commit();
+            //fragmentManager.beginTransaction().remove(popupFragment).commit();
 
             //Mark the popup as hidden.
             popupEnabled = false;
@@ -87,6 +89,7 @@ public class ReadingActivity extends AppCompatActivity {
         {
             //Enable the popup by showing it.
             fragmentManager.beginTransaction().show(popupFragment).commit();
+            //fragmentManager.beginTransaction().add(R.id.popupFrameLayout, popupFragment).commit();
 
             //Mark the popup as shown.
             popupEnabled = true;
@@ -151,6 +154,14 @@ public class ReadingActivity extends AppCompatActivity {
             //Initialize simple gesture listener.
             GestureDetector.SimpleOnGestureListener listener =
                     new GestureDetector.SimpleOnGestureListener() {
+
+                        @Override
+                        public boolean onDoubleTap (MotionEvent event)
+                        {
+                            selectImageEventHandler();
+                            return true;
+                        }
+
                         @Override
                         public boolean onDown(MotionEvent event)
                         {
@@ -165,6 +176,7 @@ public class ReadingActivity extends AppCompatActivity {
 
                             try
                             {
+                                System.out.println("Swipe Listener run");
                                 //Check if fling occurred.
                                 if (Math.abs(xDiff) > Math.abs(yDiff))
                                 {
