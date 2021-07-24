@@ -17,6 +17,8 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -96,16 +98,17 @@ public class ReadingActivity extends AppCompatActivity {
         }
     }
 
-    private void loadNextImage()
+    private void setNextImage()
     {
         //Works based on the assumption images are stored in drawables.
         currentPage++;
         String resourceName = "o" + Integer.valueOf(currentPage);
 
-        //Fetch the drawable identifer using the above string.
+        //Fetch the drawable identifier using the above string.
         int resourceID = getResources().getIdentifier(resourceName, "drawable", getPackageName());
 
-        startFlipAnimation(resourceID);
+        //Set the image to the next page.
+        bookImage.setImageResource(resourceID);
     }
 
     private void startFlipAnimation(int nextImageID)
@@ -140,6 +143,27 @@ public class ReadingActivity extends AppCompatActivity {
             //Update with previous image.
             bookImage.setImageResource(resourceID);
         }
+    }
+
+    public void loadNextImage(Context c, int resourceID) {
+        final Animation anim_out = AnimationUtils.loadAnimation(c, android.R.anim.fade_out);
+        final Animation anim_in  = AnimationUtils.loadAnimation(c, android.R.anim.fade_in);
+        anim_out.setAnimationListener(new Animation.AnimationListener()
+        {
+            @Override public void onAnimationStart(Animation animation) {}
+            @Override public void onAnimationRepeat(Animation animation) {}
+            @Override public void onAnimationEnd(Animation animation)
+            {
+                setNextImage();
+                anim_in.setAnimationListener(new Animation.AnimationListener() {
+                    @Override public void onAnimationStart(Animation animation) {}
+                    @Override public void onAnimationRepeat(Animation animation) {}
+                    @Override public void onAnimationEnd(Animation animation) {}
+                });
+                bookImage.startAnimation(anim_in);
+            }
+        });
+        bookImage.startAnimation(anim_out);
     }
 
     private class SwipeListener implements View.OnTouchListener {
@@ -192,7 +216,13 @@ public class ReadingActivity extends AppCompatActivity {
                                         {
                                             //Means we have swiped left.
                                             //Go to next image here.
-                                            loadNextImage();
+                                            //Works based on the assumption images are stored in drawables.
+                                            currentPage++;
+                                            String resourceName = "o" + Integer.valueOf(currentPage);
+
+                                            //Fetch the drawable identifier using the above string.
+                                            int resourceID = getResources().getIdentifier(resourceName, "drawable", getPackageName());
+                                            loadNextImage(getApplicationContext(), resourceID);
                                         }
                                     }
                                 }

@@ -1,11 +1,13 @@
 package com.example.mangareader.MainMenu;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -46,7 +48,6 @@ public class HeaderFragment extends Fragment {
     private void setupListeners()
     {
         searchButton.setOnClickListener(v -> searchEventHandler());
-
         filterButton.setOnClickListener(v -> filterEventHandler());
     }
 
@@ -61,4 +62,6 @@ public class HeaderFragment extends Fragment {
     private void filterEventHandler() {
         //TBD
     }
+
+
 }
