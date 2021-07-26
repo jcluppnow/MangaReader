@@ -11,5 +11,10 @@ Main menu can be navigated by using the navigation bar along the bottom.
 Three screens are available.
 
 ### Library screen
-![Library Screen] (https://raw.githubusercontent.com/jcluppnow/MangaReader/master/README_IMAGE_SOURCES/Library.png)
+<img
+src=“README_IMAGE_SOURCES/Library.png”
+raw=true
+alt=“Subject Library Screen”
+style=“margin-right: 10px;”
+/>
 This is where any downloaded or online manga can be accessed.
