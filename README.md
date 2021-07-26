@@ -11,4 +11,5 @@ Main menu can be navigated by using the navigation bar along the bottom.
 Three screens are available.
 
 ### Library screen
-![] (README_IMAGE_SOURCES/Library.PNG)
+![] (/README_IMAGE_SOURCES/Library.PNG)
+This is where any downloaded or online manga can be accessed.
