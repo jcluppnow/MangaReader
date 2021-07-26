@@ -44,9 +44,11 @@ When notifications are added related to new releases of manga, they will be list
 ### Reading Manga
 From the Library screen test manga can be selected to display the reading functionality shown below.
 <br>
+<br>
 <a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/jcluppnow/MangaReader/blob/faa0c4b73f4b222a5e952d16774974897d0f9532/README_IMAGE_SOURCES/Reading.png" height="400" /></a>
 <br>
 <br>
 Upon a double click, a navigational popup can be shown or hidden to return to previous screens. A refresh functionality exists for when we need to reload images that might not have been fetched successfully.
+<br>
 <br>
 <a href="URL_REDIRECT" target="blank"><img align="center" src="https://github.com/jcluppnow/MangaReader/blob/faa0c4b73f4b222a5e952d16774974897d0f9532/README_IMAGE_SOURCES/Reading%20Popup.png" height="400" /></a>
